@@ -83,3 +83,46 @@ Ruta en Postman: `http://localhost:3000/basic-reports`
 4. Levantar la BBDD `docker compose up -d` en mi Raspberry Pi
 5. Generar el Prisma client `npx prisma generate`
 6. Ejecutar proyecto `npm run start:dev`
+
+### 2.Constancia de empleo
+
+En esta sección prepararemos muchas bases para trabajar los reportes y explicaciones de cómo trabaja la herramienta de `PdfMake`.
+
+Puntualmente aprenderemos:
+
+- Estructura del contenido del reporte
+- Crear encabezados y pies de página
+- Trabajar con imágenes desde el backend
+- Formatear fechas
+- Columnas
+- Cargar data en el reporte
+- Estilos personalizados
+- Secciones del reporte de forma reutilizable
+- Crear una constancia laboral
+
+**Documentación y recursos necesarios**
+
+- http://pdfmake.org/#/
+- https://fonts.google.com/?query=roboto
+
+**Instalación**
+
+- Estamos trabajando con Nest, que es server-side, por tanto la instalación es: `npm install pdfmake`
+- Para TypeScript instalamos también: `npm i --save-dev @types/pdfmake`
+- Para la fuente Roboto, se ha creado en la raiz del proyecto la carpeta fonts y se ha descargado de Google Fonts
+
+**Funcionamiento**
+
+- En el service
+  - 1. Definimos los fuentes
+  - 2. Crear instancia de la impresora
+  - 3. Creamos el documento
+  - 4. Crear el pdf basado en el printer y su documento y se devuelve al controller
+- En el controller
+  - 5. Devolver al cliente el pdf como respuesta
+
+**Testing**
+
+Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/basic-reports`
+
+Si da un error `TypeError: pdfmake_1.default is not a constructor` es por la versión de PdfMake. Para corregirlo, ir al fuentte `tsconfig.json` y añadir la opción `"esModuleInterop": true` y volver a probar.
