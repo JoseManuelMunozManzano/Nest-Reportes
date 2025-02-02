@@ -113,12 +113,23 @@ Puntualmente aprenderemos:
 
 **Funcionamiento**
 
-- En el service
-  - 1. Definimos los fuentes
-  - 2. Crear instancia de la impresora
-  - 3. Creamos el documento
-  - 4. Crear el pdf basado en el printer y su documento y se devuelve al controller
-- En el controller
+Vamos a generar un módulo para PdfMake con el comando `nest g module printer`.
+
+Vamos a generar un service para PdfMake con el comando `nest g service printer --no-spec`
+
+Generamos manualmente la carpeta `reports` dentro de la carpeta `src`, y dentro creamos el archivo `hello-world.report.ts`, donde creo las funciones que acabaré llamando para traer la información.
+
+- En printer.service.ts
+  - 1. Importamos `pdfmake`
+  - 2. Definimos los fonts
+  - 3. Crear instancia de la impresora
+  - 4. Crear el pdf basado en el printer, su document definition y opciones que se pasen
+- En hello-world.report.ts
+  - 5. Creamos el document definition y se devuelve
+- En basic-reports.service.ts
+  - 6. Llamamos al método de hello-world.report.ts
+  - 6. Llamamos al método de printer.service.ts
+- En basic-reports.controller.ts
   - 5. Devolver al cliente el pdf como respuesta
 
 **Testing**

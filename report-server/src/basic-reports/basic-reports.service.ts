@@ -1,19 +1,7 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
-
-// TODO: Esto será optimizado después
-import PdfPrinter from 'pdfmake';
-import type { TDocumentDefinitions } from 'pdfmake/interfaces';
-
-// 1. Definimos fuentes
-const fonts = {
-  Roboto: {
-    normal: 'fonts/Roboto-Regular.ttf',
-    bold: 'fonts/Roboto-Medium.ttf',
-    italics: 'fonts/Roboto-Italic.ttf',
-    bolditalics: 'fonts/Roboto-MediumItalic.ttf',
-  },
-};
+import { PrinterService } from 'src/printer/printer.service';
+import { getHelloWorldReport } from 'src/reports';
 
 @Injectable()
 export class BasicReportsService extends PrismaClient implements OnModuleInit {
@@ -22,17 +10,17 @@ export class BasicReportsService extends PrismaClient implements OnModuleInit {
     // console.log('Connected to the database');
   }
 
+  constructor(private readonly printerService: PrinterService) {
+    // Para que inicialice la parte de PrismaClient
+    super();
+  }
+
   hello() {
-    // 2. Crear instancia de la impresora
-    const printer = new PdfPrinter(fonts);
+    const docDefinition = getHelloWorldReport({
+      name: 'José Manuel',
+    });
 
-    // 3. Creamos el documento
-    const docDefinition: TDocumentDefinitions = {
-      content: ['Hola Mundo'],
-    };
-
-    // 4. Crear pdf basado en el printer y su documento y devolverlo
-    const doc = printer.createPdfKitDocument(docDefinition);
+    const doc = this.printerService.createPdf(docDefinition);
 
     return doc;
   }
