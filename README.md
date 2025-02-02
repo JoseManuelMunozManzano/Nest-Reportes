@@ -128,9 +128,9 @@ Generamos manualmente la carpeta `reports` dentro de la carpeta `src`, y dentro 
   - 5. Creamos el document definition y se devuelve
 - En basic-reports.service.ts
   - 6. Llamamos al método de hello-world.report.ts
-  - 6. Llamamos al método de printer.service.ts
+  - 7. Llamamos al método de printer.service.ts
 - En basic-reports.controller.ts
-  - 5. Devolver al cliente el pdf como respuesta
+  - 8. Devolver al cliente el pdf como respuesta
 
 **Testing**
 
