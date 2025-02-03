@@ -8,6 +8,13 @@ Del curso de Fernando Herrera: https://cursos.devtalles.com/courses/nestjs-repor
 
 ## Secciones
 
+### Documentación
+
+- http://pdfmake.org/#/
+- https://pdfmake.github.io/docs/0.1/document-definition-object/headers-footers/
+- https://pdfmake.github.io/docs/0.1/document-definition-object/images/
+- https://fonts.google.com/?query=roboto
+
 ### 1.Preparación de proyecto
 
 - Proyecto report-server
@@ -100,11 +107,6 @@ Puntualmente aprenderemos:
 - Secciones del reporte de forma reutilizable
 - Crear una constancia laboral
 
-**Documentación y recursos necesarios**
-
-- http://pdfmake.org/#/
-- https://fonts.google.com/?query=roboto
-
 **Instalación**
 
 - Estamos trabajando con Nest, que es server-side, por tanto la instalación es: `npm install pdfmake`
@@ -131,6 +133,18 @@ Generamos manualmente la carpeta `reports` dentro de la carpeta `src`, y dentro 
   - 7. Llamamos al método de printer.service.ts
 - En basic-reports.controller.ts
   - 8. Devolver al cliente el pdf como respuesta
+
+Se ha creado, dentro de `src`, la carpeta `assets`, donde pondremos las distintas imágenes que usemos.
+
+**PDF Employment Service**
+
+Para empezar a crear la carta `employment-letter`, creamos el `@Get()` en el controlador `basic-reports.controller.ts`.
+
+Luego vamos a `basic-reports.service.ts` y creamos el servicio `employmentLetter()`.
+
+En la carpeta `reports` creamos el archivo `employment-letter.report.ts`.
+
+En la carpeta `src` creamos la carpeta `helpers` y dentro el archivo `date-formatter.ts`.
 
 **Testing**
 
