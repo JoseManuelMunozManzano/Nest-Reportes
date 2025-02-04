@@ -6,7 +6,7 @@ const logo: Content = {
   image: 'src/assets/tucan-code-logo.png',
   width: 100,
   height: 100,
-  alignment: 'center',
+  //alignment: 'center',
   margin: [0, 0, 0, 20],
 };
 
