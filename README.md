@@ -13,6 +13,7 @@ Del curso de Fernando Herrera: https://cursos.devtalles.com/courses/nestjs-repor
 - http://pdfmake.org/#/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/headers-footers/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/images/
+- https://pdfmake.github.io/docs/0.1/document-definition-object/tables/
 - https://fonts.google.com/?query=roboto
 
 ### 1.Preparación de proyecto
@@ -49,7 +50,7 @@ En la pestaña Conexión indicamos:
 
 Con esto pulsamos Aceptar y se crea la BD.
 
-En la carpeta `report-server/sql` tenemos los SQL con la carga inicial de nuestra BD. Hay que llevarlo a `pgAdmin` y ejecutar esas consultas para dar de alta la data.
+En la carpeta `report-server/sql/01-employees.sql` tenemos los SQL con la carga inicial de nuestra BD. Hay que llevarlo a `pgAdmin` y ejecutar esas consultas para dar de alta la data.
 
 Una vez grabada la data, confirmarlo con la siguiente consulta: `SELECT * FROM EMPLOYEES;`.
 
@@ -86,7 +87,7 @@ Ruta en Postman: `http://localhost:3000/basic-reports`
 
 1. Clonar el proyecto
 2. Instalar dependencias `npm install`
-3. Clonar `env.template` y renombrar a `.env` y completar las variables de entorno
+3. Clonar `.env.template` y renombrar a `.env` y completar las variables de entorno
 4. Levantar la BBDD `docker compose up -d` en mi Raspberry Pi
 5. Generar el Prisma client `npx prisma generate`
 6. Ejecutar proyecto `npm run start:dev`
@@ -167,3 +168,29 @@ En elfuente `basic-reports.service.ts` creamos el método `employmentLetterById(
 Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/basic-reports`
 
 Si da un error `TypeError: pdfmake_1.default is not a constructor` es por la versión de PdfMake. Para corregirlo, ir al fuentte `tsconfig.json` y añadir la opción `"esModuleInterop": true` y volver a probar.
+
+### 3.Tablas - Listado de países
+
+En esta sección trabajaremos con tablas, encabezados reutilizables y pie de página.
+
+Puntualmente veremos:
+
+- Reutilizar componentes
+- Número al pie de página
+- Tablas
+- Personalización de tablas
+- Estilos personalizados reutilizables
+- Múltiples tablas en un reporte
+- Totales del reporte
+
+**Base de datos de Países**
+
+En la carpeta `report-server/sql/02-countries.sql` tenemos los SQL con la carga inicial de nuestra BD. Hay que llevarlo a `pgAdmin` y ejecutar esas consultas para dar de alta la data.
+
+Una vez grabada la data, confirmarlo con la siguiente consulta: `SELECT * FROM COUNTRIES;`.
+
+Nos vamos a una terminal y accedemos a la carpeta del proyecto. Vamos a reconstruir el modelo usando Prisma, ejecutando: `npx prisma db pull`, que verifica como está la BD y crea el esquema en Prisma basado en la BD.
+
+Esto crea automáticamente en el proyecto, en el archivo `prisma/schema.prisma` los modelos `countries` y `continents`.
+
+Y, por último ejecutamos `npx prisma generate` para generar el nuevo cliente que va a tener las nuevas definiciones de los paises y continentes y que usaremos para interactuar con nuestra BD.
