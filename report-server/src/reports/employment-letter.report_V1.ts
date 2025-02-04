@@ -1,5 +1,9 @@
-import type { StyleDictionary, TDocumentDefinitions } from 'pdfmake/interfaces';
-import { headerSection } from './sections/header.section';
+import type {
+  Content,
+  StyleDictionary,
+  TDocumentDefinitions,
+} from 'pdfmake/interfaces';
+import { DateFormatter } from 'src/helpers';
 
 const styles: StyleDictionary = {
   header: {
@@ -26,6 +30,15 @@ const styles: StyleDictionary = {
   },
 };
 
+const logo: Content = {
+  // Estamos en el server, así que la imagen está basada en el filesystem.
+  image: 'src/assets/tucan-code-logo.png',
+  width: 100,
+  height: 100,
+  alignment: 'center',
+  margin: [0, 0, 0, 20],
+};
+
 export const getEmploymentLetteReport = (): TDocumentDefinitions => {
   const docDefinition: TDocumentDefinitions = {
     // Estilos globales
@@ -33,10 +46,16 @@ export const getEmploymentLetteReport = (): TDocumentDefinitions => {
     // Márgenes globales
     pageMargins: [40, 60, 40, 60],
 
-    header: headerSection({
-      showLogo: true,
-      showDate: true,
-    }),
+    header: {
+      columns: [
+        logo,
+        {
+          text: DateFormatter.getDDMMMMYYYY(new Date()),
+          alignment: 'right',
+          margin: [20, 20],
+        },
+      ],
+    },
 
     content: [
       {

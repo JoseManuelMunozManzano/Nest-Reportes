@@ -146,6 +146,12 @@ En la carpeta `reports` creamos el archivo `employment-letter.report.ts`.
 
 En la carpeta `src` creamos la carpeta `helpers` y dentro el archivo `date-formatter.ts`.
 
+**Componentes**
+
+Vamos a dividir nuestro PDF en distintos componentes.
+
+En la carpeta `reports` creamos la carpeta `sections` y dentro creamos el archivo `header.section.ts`.
+
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/basic-reports`
