@@ -138,6 +138,8 @@ Se ha creado, dentro de `src`, la carpeta `assets`, donde pondremos las distinta
 
 **PDF Employment Service**
 
+Petición GET: `http://localhost:3000/basic-reports/employment-letter`
+
 Para empezar a crear la carta `employment-letter`, creamos el `@Get()` en el controlador `basic-reports.controller.ts`.
 
 Luego vamos a `basic-reports.service.ts` y creamos el servicio `employmentLetter()`.
@@ -151,6 +153,14 @@ En la carpeta `src` creamos la carpeta `helpers` y dentro el archivo `date-forma
 Vamos a dividir nuestro PDF en distintos componentes.
 
 En la carpeta `reports` creamos la carpeta `sections` y dentro creamos el archivo `header.section.ts`.
+
+**Cargar información del empleado**
+
+Petición GET: `http://localhost:3000/basic-reports/employment-letter/1`
+
+En el fuente `basic-reports.controller.ts` creamos una nueva petición Get `employmentLetterById()`.
+
+En elfuente `basic-reports.service.ts` creamos el método `employmentLetterById()`.
 
 **Testing**
 

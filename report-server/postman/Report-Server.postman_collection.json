@@ -28,6 +28,53 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Constancia 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/basic-reports/employment-letter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"basic-reports",
+						"employment-letter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Constancia por ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/basic-reports/employment-letter/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"basic-reports",
+						"employment-letter",
+						"1"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
