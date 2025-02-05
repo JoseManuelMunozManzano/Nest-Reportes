@@ -207,3 +207,13 @@ Nos creamos el reporte. En la carpeta `reports` creamos el archivo `countries.re
 **Personalizar el encabezado**
 
 Modificamos `header.section.ts`.
+
+**Mostrar listado de países**
+
+Modificamos `countries.report.ts` para pasar las entradas de países al report.
+
+Modificamos `basic-reports.service.ts` para suministrar dicha data.
+
+**Testing**
+
+Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/basic-reports/countries`
