@@ -14,6 +14,7 @@ Del curso de Fernando Herrera: https://cursos.devtalles.com/courses/nestjs-repor
 - https://pdfmake.github.io/docs/0.1/document-definition-object/headers-footers/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/images/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/tables/
+- https://pdfmake.github.io/docs/0.1/document-definition-object/stack/
 - https://fonts.google.com/?query=roboto
 
 ### 1.Preparación de proyecto
@@ -196,8 +197,13 @@ Esto crea automáticamente en el proyecto, en el archivo `prisma/schema.prisma` 
 Y, por último ejecutamos `npx prisma generate` para generar el nuevo cliente que va a tener las nuevas definiciones de los paises y continentes y que usaremos para interactuar con nuestra BD.
 
 **Reportes con tablas**
+
 En `basic-reports.controller.ts` creamos un nuevo endpoint con nombre de método `getCountriesReport()`.
 
 En `basic-reports.service.ts` creamos un nuevo método de reporte con nombre `getCountries()`.
 
 Nos creamos el reporte. En la carpeta `reports` creamos el archivo `countries.report.ts`.
+
+**Personalizar el encabezado**
+
+Modificamos `header.section.ts`.
