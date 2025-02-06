@@ -237,3 +237,41 @@ Modificamos nuestro report `countries.report.ts` para usar nuestro nuevo layout 
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/basic-reports/countries`
+
+### 4.Recibo de compra - Maestro detalle relacionado
+
+El objetivo principal de esta sección, es construir un recibo de compra que se basa en una serie de tablas (Maestro detalle), pero quiero recorrer la milla extra y hacer que ese detalle sea bien complejo, lo más apegado a la vida real.
+
+Puntualmente veremos:
+
+- Códigos QR
+- Inner joins
+- Tablas y estilos
+- Estructura y alineamiento
+- Envío de data de Prisma a reporte
+
+**Base de datos**
+
+En la carpeta `report-server/sql/03-master-detail.sql` tenemos los SQL con la carga inicial de nuestra BD. Hay que llevarlo a `pgAdmin` y ejecutar esas consultas para dar de alta la data.
+
+Una vez grabada la data, confirmarlo con, por ejemplo, la siguiente consulta: `SELECT * FROM PRODUCTS;`.
+
+Nos vamos a una terminal y accedemos a la carpeta del proyecto. Vamos a reconstruir el modelo usando Prisma, ejecutando: `npx prisma db pull`, que verifica como está la BD y crea el esquema en Prisma basado en la BD.
+
+Esto crea automáticamente en el proyecto, en el archivo `prisma/schema.prisma` los modelos nuevos.
+
+Y, por último ejecutamos `npx prisma generate` para generar el nuevo cliente que va a tener las nuevas definiciones y que usaremos para interactuar con nuestra BD.
+
+**Preparar módulo, controlador y servicio**
+
+Ejecutamos en una terminal y accediendo a la carpeta de nuestro proyecto: `nest g resource storeReports --no-spec`, seleccionamos `REST API` y respondemos `n` a la pregunta sobre si se genera el CRUD completo. Esto crea la carpeta `store-reports`.
+
+En `store-reports.controller.ts` nos creamos el `@Get()`.
+
+En `store-reports.module.ts` importamos `PrinterModule`.
+
+En `store-reports.service.ts` inyectamos en el constructor `PrinterService` y creamos el método `getOrderByIdReport`.
+
+**Testing**
+
+Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/basic-reports/countries`

@@ -98,6 +98,30 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "5-Order By Id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/store-reports/orders/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store-reports",
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
