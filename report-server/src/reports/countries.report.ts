@@ -26,7 +26,7 @@ export const getCountryReport = (
     pageMargins: [40, 110, 40, 60], // izquierda, arriba, derecha, abajo
     content: [
       {
-        layout: 'lightHorizontalLines', // optional
+        layout: 'customLayout01', //'lightHorizontalLines', // optional
         table: {
           // headers are automatically repeated if the table spans over multiple pages
           // you can declare how many rows should be treated as headers
@@ -46,18 +46,18 @@ export const getCountryReport = (
             ]),
 
             // Forma simple de añadir totales
-            // ['', '', '', '', '', ''],
-            // [
-            //   '',
-            //   '',
-            //   '',
-            //   '',
-            //   'Total',
-            //   {
-            //     text: `${countries.length} países`,
-            //     bold: true,
-            //   },
-            // ],
+            ['', '', '', '', '', ''],
+            [
+              '',
+              '',
+              '',
+              '',
+              'Total',
+              {
+                text: `${countries.length} países`,
+                bold: true,
+              },
+            ],
           ],
         },
       },

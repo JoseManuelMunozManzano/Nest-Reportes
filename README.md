@@ -16,6 +16,7 @@ Del curso de Fernando Herrera: https://cursos.devtalles.com/courses/nestjs-repor
 - https://pdfmake.github.io/docs/0.1/document-definition-object/tables/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/stack/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/headers-footers/
+- https://pdfmake.github.io/docs/0.1/document-definition-object/tables/
 - https://fonts.google.com/?query=roboto
 
 ### 1.Preparación de proyecto
@@ -226,6 +227,12 @@ Actualizamos `countries.report.ts` para utilizar el footer.
 Se hace como una tabla.
 
 Primero lo hacemos de manera simple, en `countries.report.ts`.
+
+**Estilo personalizado de tablas**
+
+Modificamos `printer.service.ts` añadiendo `customTableLayouts` para hacerlo global a todos los reports.
+
+Modificamos nuestro report `countries.report.ts` para usar nuestro nuevo layout `customLayout01`.
 
 **Testing**
 
