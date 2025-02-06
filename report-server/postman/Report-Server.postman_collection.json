@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "Hola Mundo",
+			"name": "1-Hola Mundo",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -30,7 +30,7 @@
 			"response": []
 		},
 		{
-			"name": "Constancia 1",
+			"name": "2-Constancia 1",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -53,7 +53,7 @@
 			"response": []
 		},
 		{
-			"name": "Constancia por ID",
+			"name": "3-Constancia por ID",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -71,6 +71,29 @@
 						"basic-reports",
 						"employment-letter",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4-Paises",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/basic-reports/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"basic-reports",
+						"countries"
 					]
 				}
 			},

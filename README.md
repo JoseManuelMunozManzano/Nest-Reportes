@@ -15,6 +15,7 @@ Del curso de Fernando Herrera: https://cursos.devtalles.com/courses/nestjs-repor
 - https://pdfmake.github.io/docs/0.1/document-definition-object/images/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/tables/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/stack/
+- https://pdfmake.github.io/docs/0.1/document-definition-object/headers-footers/
 - https://fonts.google.com/?query=roboto
 
 ### 1.Preparación de proyecto
@@ -213,6 +214,18 @@ Modificamos `header.section.ts`.
 Modificamos `countries.report.ts` para pasar las entradas de países al report.
 
 Modificamos `basic-reports.service.ts` para suministrar dicha data.
+
+**Pie de página con numeración**
+
+Creamos el archivo `reports/section/footer.section.ts`.
+
+Actualizamos `countries.report.ts` para utilizar el footer.
+
+**Mostrar totales de tabla**
+
+Se hace como una tabla.
+
+Primero lo hacemos de manera simple, en `countries.report.ts`.
 
 **Testing**
 
