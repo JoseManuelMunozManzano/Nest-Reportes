@@ -11,12 +11,14 @@ Del curso de Fernando Herrera: https://cursos.devtalles.com/courses/nestjs-repor
 ### Documentación
 
 - http://pdfmake.org/#/
+- http://pdfmake.org/playground.html
 - https://pdfmake.github.io/docs/0.1/document-definition-object/headers-footers/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/images/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/tables/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/stack/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/headers-footers/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/tables/
+- https://pdfmake.github.io/docs/0.1/document-definition-object/qr/
 - https://fonts.google.com/?query=roboto
 
 ### 1.Preparación de proyecto
@@ -277,6 +279,10 @@ En `store-reports.service.ts` inyectamos en el constructor `PrinterService` y cr
 En la carpeta `reports` creamos un nuevo reporte `order-by-id.report.ts`.
 
 Modificamos `store-reports.service.ts` para llamar al método `orderByIdReport`.
+
+**Código QR**
+
+Modificamos `order-by-id.report.ts` para añadir el código referente al QR.
 
 **Testing**
 

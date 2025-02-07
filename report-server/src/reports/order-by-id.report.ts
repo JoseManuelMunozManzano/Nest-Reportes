@@ -26,21 +26,27 @@ export const orderByIdReport = (): TDocumentDefinitions => {
     header: logo,
     pageMargins: [40, 60, 40, 60],
     content: [
+      // Header
       {
         text: 'Tucan Code',
         style: 'header',
       },
+
+      // Address and receipt
       {
         columns: [
           {
             text: '15 Montgomery Str, Suite 100,\nOttawa ON K2Y 9X1, CANADA\nBN: 12783671823\nhttps://devtalles.com',
           },
           {
-            text: `Recibo No. $123123\nFecha del recibo ${DateFormatter.getDDMMMMYYYY(new Date())}\nPagar antes de: ${DateFormatter.getDDMMMMYYYY(new Date())}\n`,
+            text: `Recibo No. 123123\nFecha del recibo ${DateFormatter.getDDMMMMYYYY(new Date())}\nPagar antes de: ${DateFormatter.getDDMMMMYYYY(new Date())}\n`,
             alignment: 'right',
           },
         ],
       },
+
+      // QR
+      { qr: 'https://devtalles.com', fit: 75, alignment: 'right' },
     ],
   };
 };
