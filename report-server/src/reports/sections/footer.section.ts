@@ -6,7 +6,7 @@ export const footerSection = (
   pageSize: ContextPageSize,
 ): Content => {
   return {
-    text: `Page ${currentPage} of ${pageCount}`,
+    text: `Página ${currentPage} de ${pageCount}`,
     fontSize: 12,
     alignment: 'right',
     bold: true,

@@ -284,6 +284,10 @@ Modificamos `store-reports.service.ts` para llamar al método `orderByIdReport`.
 
 Modificamos `order-by-id.report.ts` para añadir el código referente al QR.
 
+**Estilo en la misma línea**
+
+Modificamos `order-by-id.report.ts` para añadir estilos en la misma línea.
+
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/basic-reports/countries`
