@@ -294,6 +294,26 @@ Modificamos `order-by-id.report.ts` para añadir la tabla.
 
 Nos creamos en la carpeta `helpers` un archivo `currency-formatter.ts`.
 
+**Relaciones de base de datos**
+
+En PgAdmin ejecutamos el siguiente SQL:
+
+```
+SELECT
+	*
+FROM
+	ORDERS
+	INNER JOIN ORDER_DETAILS ON ORDERS.ORDER_ID = ORDER_DETAILS.ORDER_ID
+	INNER JOIN PRODUCTS ON ORDER_DETAILS.PRODUCT_ID = PRODUCTS.PRODUCT_ID
+	INNER JOIN CUSTOMERS ON ORDERS.CUSTOMER_ID = CUSTOMERS.CUSTOMER_ID
+WHERE
+	ORDERS.ORDER_ID = 10250;
+```
+
+Con esta información generaremos dinámicamente el reporte.
+
+En un entorno real nos podríamos crear una vista.
+
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/basic-reports/countries`
