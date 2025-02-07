@@ -272,6 +272,12 @@ En `store-reports.module.ts` importamos `PrinterModule`.
 
 En `store-reports.service.ts` inyectamos en el constructor `PrinterService` y creamos el método `getOrderByIdReport`.
 
+**Factura - Creación del reporte*
+
+En la carpeta `reports` creamos un nuevo reporte `order-by-id.report.ts`.
+
+Modificamos `store-reports.service.ts` para llamar al método `orderByIdReport`.
+
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/basic-reports/countries`

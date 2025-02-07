@@ -1,7 +1,7 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
 import { PrinterService } from 'src/printer/printer.service';
-import { getHelloWorldReport } from 'src/reports';
+import { orderByIdReport } from 'src/reports';
 
 @Injectable()
 export class StoreReportsService extends PrismaClient implements OnModuleInit {
@@ -15,9 +15,7 @@ export class StoreReportsService extends PrismaClient implements OnModuleInit {
   }
 
   async getOrderByIdReport(orderId: string) {
-    const docDefinition = await getHelloWorldReport({
-      name: `José Manuel ${orderId}`,
-    });
+    const docDefinition = await orderByIdReport();
 
     return this.printerService.createPdf(docDefinition);
   }
