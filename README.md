@@ -288,6 +288,12 @@ Modificamos `order-by-id.report.ts` para añadir el código referente al QR.
 
 Modificamos `order-by-id.report.ts` para añadir estilos en la misma línea.
 
+**Tabla con el detalle**
+
+Modificamos `order-by-id.report.ts` para añadir la tabla.
+
+Nos creamos en la carpeta `helpers` un archivo `currency-formatter.ts`.
+
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/basic-reports/countries`

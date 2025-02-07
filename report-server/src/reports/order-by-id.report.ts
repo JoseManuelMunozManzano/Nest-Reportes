@@ -3,7 +3,7 @@ import type {
   StyleDictionary,
   TDocumentDefinitions,
 } from 'pdfmake/interfaces';
-import { DateFormatter } from 'src/helpers';
+import { CurrencyFormatter, DateFormatter } from 'src/helpers';
 import { footerSection } from './sections/footer.section';
 
 const logo: Content = {
@@ -70,6 +70,77 @@ export const orderByIdReport = (): TDocumentDefinitions => {
           `Razón Social: Richter Supermarkt
           Michael Holz
           Grenzacherweg 237`,
+        ],
+      },
+
+      // Tabla del detalle de la orden
+      {
+        layout: 'headerLineOnly',
+        margin: [0, 20],
+        table: {
+          headerRows: 1,
+          widths: [50, '*', 'auto', 'auto', 'auto'],
+          body: [
+            ['ID', 'Descripción', 'Cantidad', 'Precio', 'Total'],
+
+            [
+              '1',
+              'Producto 1',
+              '1',
+              '100',
+              CurrencyFormatter.formatCurrency(100),
+            ],
+            [
+              '2',
+              'Producto 2',
+              '2',
+              '200',
+              CurrencyFormatter.formatCurrency(11400),
+            ],
+            [
+              '3',
+              'Producto 3',
+              '3',
+              '300',
+              {
+                text: CurrencyFormatter.formatCurrency(900),
+                alignment: 'right',
+              },
+            ],
+          ],
+        },
+      },
+
+      // Salto de línea
+      '\n',
+
+      // Totales
+      {
+        columns: [
+          { width: '*', text: '' },
+          {
+            width: 'auto',
+            layout: 'noBorders',
+            table: {
+              body: [
+                [
+                  'Subtotal',
+                  {
+                    text: CurrencyFormatter.formatCurrency(120),
+                    alignment: 'right',
+                  },
+                ],
+                [
+                  { text: 'Total', bold: true },
+                  {
+                    text: CurrencyFormatter.formatCurrency(150),
+                    alignment: 'right',
+                    bold: true,
+                  },
+                ],
+              ],
+            },
+          },
         ],
       },
     ],
