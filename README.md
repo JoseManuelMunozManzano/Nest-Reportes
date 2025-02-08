@@ -314,6 +314,14 @@ Con esta información generaremos dinámicamente el reporte.
 
 En un entorno real nos podríamos crear una vista.
 
+**Prisma - Información completa del recibo**
+
+Modificamos `store-reports.controller.ts` para llamar al método `getOrderByIdReport` pasando siempre un number.
+
+Modificamos `store-reports.service.ts` para recibir un number. Además hacemos la consulta anterior (a la manera de Prisma) para obtener la data de BD y mandarla usando el método `orderBydIdReport()`.
+
+En `order-by-id-report.ts` creamos una interface para tipado estricto de TypeScript. Usamos la extensión de VSCode `Paste JSON as Code` copiando del terminal el JSON obtenido de la data con la siguiente instrucción `console.log(JSON.stringify(order, null, 2));`.
+
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/basic-reports/countries`
