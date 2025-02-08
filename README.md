@@ -21,6 +21,8 @@ Del curso de Fernando Herrera: https://cursos.devtalles.com/courses/nestjs-repor
 - https://pdfmake.github.io/docs/0.1/document-definition-object/qr/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/svgs/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/images/
+- https://www.chartjs.org/
+- https://quickchart.io/documentation/
 - https://fonts.google.com/?query=roboto
 
 ### 1.Preparación de proyecto
@@ -356,6 +358,22 @@ Añadimos a nuestro controller `store-reports.controller.ts` un nuevo método ge
 Creamos en `store-reports.service.ts` el método `getSvgChart()`.
 
 En la carpeta `reports` creamos un nuevo archivo `basic-chart-svr.report.ts` y dentro un método `getBasicChartSrvReport()`.
+
+**Mostrar un gráfico**
+
+Vamos a mostrar una gráfica de `Chart.js` en nuestro reporte.
+
+Vamos a usar `QuickChart`, que nos ofrece un endpoint para, dada una configuración de `Chart.js`, nos genera la gráfica como una imagen.
+
+Este último paso no es necesario porque podemos renderizar la gráfica localmente en un div de un Html, y luego pasar este elemento renderizado.
+
+Otra forma es instalar el paquete `npm install chartjs-node-canvas` que genera la gráfica desde el lado del backend.
+
+En nuestro archivo `basic-chart-svr.report.ts` creamos el método `generateChartImage()`.
+
+En la carpeta `helpers` creamos un nuevo archivo `chart-utils.ts`.
+
+Instalamos axios para las peticiones: `npm i axios`.
 
 **Testing**
 
