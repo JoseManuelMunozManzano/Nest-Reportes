@@ -322,6 +322,11 @@ Modificamos `store-reports.service.ts` para recibir un number. Además hacemos l
 
 En `order-by-id-report.ts` creamos una interface para tipado estricto de TypeScript. Usamos la extensión de VSCode `Paste JSON as Code` copiando del terminal el JSON obtenido de la data con la siguiente instrucción `console.log(JSON.stringify(order, null, 2));`.
 
+**Prisma - Mostrar información del recibo**
+
+Modificamos `order-by-id.report.ts` para sustituir el hardcode por la data correcta.
+
+
 **Testing**
 
-Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/basic-reports/countries`
+Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/store-reports/orders/10250` para una order correcta, y `http://localhost:3000/store-reports/orders/1` para ver la excepción.
