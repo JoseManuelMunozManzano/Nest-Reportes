@@ -124,7 +124,7 @@
 			"response": []
 		},
 		{
-			"name": "5-Order By Id Exception",
+			"name": "6-Order By Id Exception",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -142,6 +142,29 @@
 						"store-reports",
 						"orders",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7-SVG Chart",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/store-reports/svgs-charts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store-reports",
+						"svgs-charts"
 					]
 				}
 			},

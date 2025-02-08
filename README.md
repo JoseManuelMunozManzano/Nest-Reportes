@@ -19,6 +19,8 @@ Del curso de Fernando Herrera: https://cursos.devtalles.com/courses/nestjs-repor
 - https://pdfmake.github.io/docs/0.1/document-definition-object/headers-footers/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/tables/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/qr/
+- https://pdfmake.github.io/docs/0.1/document-definition-object/svgs/
+- https://pdfmake.github.io/docs/0.1/document-definition-object/images/
 - https://fonts.google.com/?query=roboto
 
 ### 1.Preparación de proyecto
@@ -326,7 +328,35 @@ En `order-by-id-report.ts` creamos una interface para tipado estricto de TypeScr
 
 Modificamos `order-by-id.report.ts` para sustituir el hardcode por la data correcta.
 
-
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/store-reports/orders/10250` para una order correcta, y `http://localhost:3000/store-reports/orders/1` para ver la excepción.
+
+### 5.Gráficos y SVG
+
+En esta sección aprenderemos a generar gráficos y colocarlos en nuestro reporte, también usaremos SVGs los cuales no son diferentes a las imágenes.
+
+Puntualmente veremos:
+
+- Chart.js
+- Queries de conteo en prisma
+- Gráficos de:
+- Dona
+- Lineas
+- Barras
+- Ubicarlos en lugares deseados
+- Parametrizar y reutilizarlos
+
+**Mostrar SVGs**
+
+Es un ejemplo sencillo para mostrar un SVG. PdfMake soporta imágenes SVG, siempre que no contengan espacios. Este error se corrige cargando el fichero SVG desde el filesystem.
+
+Añadimos a nuestro controller `store-reports.controller.ts` un nuevo método get `getSvgChart()` que llama al método del service `getSvgChart()`.
+
+Creamos en `store-reports.service.ts` el método `getSvgChart()`.
+
+En la carpeta `reports` creamos un nuevo archivo `basic-chart-svr.report.ts` y dentro un método `getBasicChartSrvReport()`.
+
+**Testing**
+
+Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/store-reports/svgs-charts`.
