@@ -80,15 +80,13 @@ export function numbers(config: NumbersConfig = {}) {
   const decimals = cfg.decimals ?? 8;
   const continuity = cfg.continuity ?? 1;
   const dfactor = Math.pow(10, decimals) || 0;
-  const data = [];
+  const data: number[] = [];
   let i: number, value: number;
 
   for (i = 0; i < count; ++i) {
     value = (from[i] || 0) + rand(min, max);
     if (rand() <= continuity) {
       data.push(Math.round(dfactor * value) / dfactor);
-    } else {
-      data.push(null);
     }
   }
 
@@ -119,7 +117,7 @@ export function months(config: MonthsConfig = {}) {
   const cfg = config ?? {};
   const count = cfg.count ?? 12;
   const section = cfg.section;
-  const values = [];
+  const values: string[] = [];
   let i: number, value: string;
 
   for (i = 0; i < count; ++i) {

@@ -22,6 +22,7 @@ Del curso de Fernando Herrera: https://cursos.devtalles.com/courses/nestjs-repor
 - https://pdfmake.github.io/docs/0.1/document-definition-object/svgs/
 - https://pdfmake.github.io/docs/0.1/document-definition-object/images/
 - https://www.chartjs.org/
+- https://www.chartjs.org/docs/latest/samples/utils.html
 - https://quickchart.io/documentation/
 - https://fonts.google.com/?query=roboto
 
@@ -378,6 +379,18 @@ Instalamos axios para las peticiones: `npm i axios`.
 **Parámetros adicionales - QuickChart**
 
 Modificamos el fuente `chart-utils.ts` para que espere parámetros adicionales y pueda personalizarse.
+
+**Utilidades para Chart.js**
+
+En la web de Chart.js aparece un fichero `Utils` (https://www.chartjs.org/docs/latest/samples/utils.html). El problema es que no están en TypeScript. En el curso nos dan ese archivo de utilidades pero transformado a TypeScript.
+
+Añadimos al archivo `chart-utils.ts` ese nuevo código e instalamos el paquéte `npm i @kurkle/color` para que nuestras imágenes se vean más bonitas.
+
+Vamos a crear una gráfica muy similar a `https://www.chartjs.org/docs/latest/samples/other-charts/doughnut.html`.
+
+Cogemos la configuración de esa URL (tab Config y Setup), vamos al fuente `basic-chart-svg.report.ts` y genero otra función para esa gráfica.
+
+Esto lo vamos a acabar cambiando para generalizar el tipo de gráfico en una función `helpers`.
 
 **Testing**
 
