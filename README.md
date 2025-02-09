@@ -419,6 +419,20 @@ Modificamos el reporte `statistics.report.ts`.
 
 Corregimos `store-reports.service.ts` para hacer la llamada correcta.
 
+**Reutilizar código para otras gráficas**
+
+Para reutilizar código vamos a crear funciones helpers.
+
+En la carpeta `reports` creamos otra carpeta para poner nuestras gráficas llamada `charts`.
+
+Dentro de `charts` nos creamos un archivo `donut.chart.ts`.
+
+Nos generamos la copia `statistics.report.copy.ts` para no perderla.
+
+Nos llevamos la función `generateTopCountryDonut()` de `statistics.report.ts` a `donut.chart.ts` y le cambiamos el nombre a `getDonutChart()` para que sea más genérico y lo modificamos.
+
+Modificamos `statistics.report.ts`.
+
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer las siguientes peticinoes GET: 
