@@ -23,6 +23,7 @@ Del curso de Fernando Herrera: https://cursos.devtalles.com/courses/nestjs-repor
 - https://pdfmake.github.io/docs/0.1/document-definition-object/images/
 - https://www.chartjs.org/
 - https://www.chartjs.org/docs/latest/samples/utils.html
+- https://www.chartjs.org/docs/latest/samples/other-charts/doughnut.html
 - https://quickchart.io/documentation/
 - https://fonts.google.com/?query=roboto
 
@@ -411,6 +412,12 @@ En `store-reports.controller.ts` creamos un nuevo endpoint Get `statistics` y ac
 En `store-reports.service.ts` creamos dicho método `getStatistics()` y aquí es donde pasamos la Query a formato Prisma. Acabamos llamando al método de reporte `getStatisticsReport()`.
 
 En la carpeta `reports` creamos el nuevo reporte `statistics.report.ts`.
+
+**Mostrar información en el reporte**
+
+Modificamos el reporte `statistics.report.ts`.
+
+Corregimos `store-reports.service.ts` para hacer la llamada correcta.
 
 **Testing**
 

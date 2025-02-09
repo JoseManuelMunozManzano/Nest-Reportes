@@ -4,7 +4,6 @@ import { PrinterService } from 'src/printer/printer.service';
 import {
   orderByIdReport,
   getBasicChartSrvReport,
-  getHelloWorldReport,
   getStatisticsReport,
 } from 'src/reports';
 
@@ -64,7 +63,14 @@ export class StoreReportsService extends PrismaClient implements OnModuleInit {
       take: 10,
     });
 
-    const docDefinition = getStatisticsReport({});
+    const topCountryData = topCountries.map(({ country, _count }) => ({
+      country: country!,
+      customers: _count,
+    }));
+
+    const docDefinition = await getStatisticsReport({
+      topCountries: topCountryData,
+    });
 
     return this.printerService.createPdf(docDefinition);
   }
