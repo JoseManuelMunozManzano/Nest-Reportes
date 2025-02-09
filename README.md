@@ -375,6 +375,10 @@ En la carpeta `helpers` creamos un nuevo archivo `chart-utils.ts`.
 
 Instalamos axios para las peticiones: `npm i axios`.
 
+**Parámetros adicionales - QuickChart**
+
+Modificamos el fuente `chart-utils.ts` para que espere parámetros adicionales y pueda personalizarse.
+
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/store-reports/svgs-charts`.
