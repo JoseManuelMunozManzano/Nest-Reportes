@@ -169,6 +169,29 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "8-Statistics",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/store-reports/statistics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store-reports",
+						"statistics"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

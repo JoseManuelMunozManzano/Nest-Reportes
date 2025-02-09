@@ -392,6 +392,32 @@ Cogemos la configuración de esa URL (tab Config y Setup), vamos al fuente `basi
 
 Esto lo vamos a acabar cambiando para generalizar el tipo de gráfico en una función `helpers`.
 
+**Reporte de dona - Mejores 10 países**
+
+El query para obtener los mejores 10 países, escrito en PgAdmin es:
+
+```
+SELECT COUNT(*), COUNTRY
+FROM CUSTOMERS
+GROUP BY COUNTRY
+ORDER BY COUNT(*) DESC
+LIMIT 10;
+```
+
+Esta consulta la tenemos que pasar a Prisma.
+
+En `store-reports.controller.ts` creamos un nuevo endpoint Get `statistics` y acabamos llamando al método del service `getStatistics()`.
+
+En `store-reports.service.ts` creamos dicho método `getStatistics()` y aquí es donde pasamos la Query a formato Prisma. Acabamos llamando al método de reporte `getStatisticsReport()`.
+
+En la carpeta `reports` creamos el nuevo reporte `statistics.report.ts`.
+
 **Testing**
 
-Tras ejecutar el proyecto, en Postman hacer la siguiente petición GET: `http://localhost:3000/store-reports/svgs-charts`.
+Tras ejecutar el proyecto, en Postman hacer las siguientes peticinoes GET: 
+
+```
+http://localhost:3000/store-reports/svgs-charts
+
+http://localhost:3000/store-reports/statistics
+```
