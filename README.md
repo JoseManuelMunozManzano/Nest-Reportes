@@ -457,6 +457,12 @@ Dentro de `charts` nos creamos un archivo `bars.chart.ts`.
 
 Modificamos `statistics.report.ts` para llamar al método `getBarsChart()`.
 
+**Gráfica Polar Area**
+
+Dentro de `charts` nos creamos un archivo `polar.chart.ts`.
+
+Modificamos `statistics.report.ts` para llamar al método `getPolarChart()`.
+
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer las siguientes peticinoes GET: 
