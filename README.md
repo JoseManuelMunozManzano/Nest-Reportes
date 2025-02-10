@@ -491,3 +491,11 @@ En `extra-reports.controller.ts` nos creamos el `@Get()`.
 En `extra-reports.module.ts` importamos `PrinterModule`.
 
 En `extra-reports.service.ts` inyectamos en el constructor `PrinterService` y creamos el método `getHtmlReport()`.
+
+**Testing**
+
+Tras ejecutar el proyecto, en Postman hacer las siguientes peticinoes GET: 
+
+```
+http://localhost:3000/extra-reports/html-report
+```
