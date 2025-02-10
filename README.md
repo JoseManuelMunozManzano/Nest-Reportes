@@ -27,6 +27,8 @@ Del curso de Fernando Herrera: https://cursos.devtalles.com/courses/nestjs-repor
 - https://www.chartjs.org/docs/latest/samples/line/point-styling.html
 - https://www.chartjs.org/docs/latest/samples/bar/border-radius.html
 - https://quickchart.io/documentation/
+- https://www.npmjs.com/package/html-to-pdfmake
+- https://github.com/Aymkdn/html-to-pdfmake?tab=readme-ov-file#use-with-node
 - https://fonts.google.com/?query=roboto
 
 ### 1.Preparación de proyecto
@@ -465,7 +467,7 @@ Modificamos `statistics.report.ts` para llamar al método `getPolarChart()`.
 
 **Testing**
 
-Tras ejecutar el proyecto, en Postman hacer las siguientes peticinoes GET: 
+Tras ejecutar el proyecto, en Postman hacer las siguientes peticiones GET: 
 
 ```
 http://localhost:3000/store-reports/svgs-charts
@@ -492,9 +494,21 @@ En `extra-reports.module.ts` importamos `PrinterModule`.
 
 En `extra-reports.service.ts` inyectamos en el constructor `PrinterService` y creamos el método `getHtmlReport()`.
 
+**HTML to PdfMake**
+
+Instalamos el siguiente paquete: `npm i html-to-pdfmake` y su tipado para TypeScript `npm i --save-dev @types/html-to-pdfmake`.
+
+`html-to-pdfmake` está pensado para un uso de cliente. Para usarlo desde el server hay que instalar el siguiente paquete: `npm i jsdom`, que permite crear un DOM virtual.
+
+En la carpeta `reports` creamos una nueva carpeta `html` y dentro creamos el archivo `basic-01.html`.
+
+Modificamos `extra-reports.service.ts` para acceder al filesystem y cargar nuestro archivo html.
+
+Nos creamos una función helper para utilizar el paquete `html-to-pdfmake`. En la carpeta `helpers` creamos el archivo `html-to-pdfmake.ts`.
+
 **Testing**
 
-Tras ejecutar el proyecto, en Postman hacer las siguientes peticinoes GET: 
+Tras ejecutar el proyecto, en Postman hacer las siguientes peticiones GET: 
 
 ```
 http://localhost:3000/extra-reports/html-report
