@@ -26,8 +26,33 @@ export const getStatisticsReport = async (
   const docDefinition: TDocumentDefinitions = {
     content: [
       {
-        image: donutChart,
-        width: 500,
+        columns: [
+          {
+            stack: [
+              {
+                text: '10 países con más clientes',
+                alignment: 'center',
+                margin: [0, 0, 0, 10],
+              },
+              {
+                image: donutChart,
+                width: 320,
+              },
+            ],
+          },
+          {
+            layout: 'lightHorizontalLines',
+            width: 'auto',
+            table: {
+              headerRows: 1,
+              widths: [100, 'auto'],
+              body: [
+                ['País', 'Clientes'],
+                ...options.topCountries.map((c) => [c.country, c.customers]),
+              ],
+            },
+          },
+        ],
       },
     ],
   };

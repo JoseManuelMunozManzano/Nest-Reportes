@@ -433,6 +433,10 @@ Nos llevamos la función `generateTopCountryDonut()` de `statistics.report.ts` a
 
 Modificamos `statistics.report.ts`.
 
+**Mostrar tabla - Mejores 10 países**
+
+Modificamos `statistics.report.ts` para añadir la tabla.
+
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer las siguientes peticinoes GET: 
