@@ -472,3 +472,22 @@ http://localhost:3000/store-reports/svgs-charts
 
 http://localhost:3000/store-reports/statistics
 ```
+
+### 6.Utilidades y diseño complejo
+
+En esta sección quiero que hagamos dos cosas principales:
+
+- Convertir HTML a PdfMake
+- Trabajar diseños de tablas complejos
+
+Esta sección tiene por objetivo que podamos buscar formas de desarrollar contenidos elaborados y complejos de forma sencilla y poder crear reportes atractivos a la vista.
+
+**Preparar módulo, controlador y servicio**
+
+Creo usando el CLI de Nest un resource: `nest g resource extra-reports --no-spec`. Selecciono `REST API` y a la pregunta sobre si queremos generar CRUD entry points respondemos `n`.
+
+En `extra-reports.controller.ts` nos creamos el `@Get()`.
+
+En `extra-reports.module.ts` importamos `PrinterModule`.
+
+En `extra-reports.service.ts` inyectamos en el constructor `PrinterService` y creamos el método `getHtmlReport()`.

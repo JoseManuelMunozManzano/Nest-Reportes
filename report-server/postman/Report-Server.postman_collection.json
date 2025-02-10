@@ -192,6 +192,29 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "9-Html Report",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/extra-reports/html-report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"extra-reports",
+						"html-report"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
