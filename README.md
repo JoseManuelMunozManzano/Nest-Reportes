@@ -24,6 +24,7 @@ Del curso de Fernando Herrera: https://cursos.devtalles.com/courses/nestjs-repor
 - https://www.chartjs.org/
 - https://www.chartjs.org/docs/latest/samples/utils.html
 - https://www.chartjs.org/docs/latest/samples/other-charts/doughnut.html
+- https://www.chartjs.org/docs/latest/samples/line/point-styling.html
 - https://quickchart.io/documentation/
 - https://fonts.google.com/?query=roboto
 
@@ -442,6 +443,12 @@ Modificamos `statistics.report.ts` para añadir la tabla.
 Modificamos `statistics.report.ts` para añadir el encabezado.
 
 Modificamos `header.section.ts` para que entre bien el texto de título y subtítulo.
+
+**Gráfica lineal**
+
+Dentro de `charts` nos creamos un archivo `line.chart.ts`.
+
+Modificamos `statistics.report.ts` para llamar al método `getLineChart()`.
 
 **Testing**
 
