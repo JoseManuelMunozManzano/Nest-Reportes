@@ -506,6 +506,48 @@ Modificamos `extra-reports.service.ts` para acceder al filesystem y cargar nuest
 
 Nos creamos una función helper para utilizar el paquete `html-to-pdfmake`. En la carpeta `helpers` creamos el archivo `html-to-pdfmake.ts`.
 
+**HTML Complejo**
+
+En la carpeta `html` creamos los archivos `basic-02.html` y `basic-03.html`. Este último archivo es como `basic-02.html` pero con una sintaxis inventada.
+
+Modificamos `extra-reports.service.ts` para acceder al filesystem y cargar nuestro archivo html.
+
+Vemos como hacer un reemplazo de variables en el HTML. Para ello modificamos el archivo `html-to-pdfmake.ts` para que reciba parámetros que sustituyan partes del html.
+
+En caso de necesitar realizar operaciones más complejas, una alternativa es usar procesadores HTML como Handlebars o Pug: `https://handlebarsjs.com/installation/#usage`. Ejemplo:
+
+```
+import { compile } from 'handlebars'; 
+
+export const handlebarsToHtml = <T>(template:string, context: T) => {
+  const templateFn = compile(template);  
+  return templateFn(context); 
+};
+```
+
+Para reemplazar variables se puede usar también expresiones regulares. Ejemplo:
+
+```
+import htmlToPdfmake from 'html-to-pdfmake';
+import { JSDOM } from 'jsdom';
+
+const regex = /\{\{\s*([^}]+?)\s*\}\}/g;
+
+export interface ContentReplacer {
+    [key: string]:string;
+}
+
+export const getHtmlContent = (html:string="", replace: ContentReplacer={}) => {
+    html = html.replaceAll(regex, (match, key) => {
+        return replace.hasOwnProperty(key) ? replace[key].toString() : match; 
+    });
+
+    const { window } = new JSDOM();
+
+    return htmlToPdfmake(html,{window});
+}
+```
+
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer las siguientes peticiones GET: 
