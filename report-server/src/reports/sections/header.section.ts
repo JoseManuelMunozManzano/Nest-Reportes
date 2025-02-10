@@ -35,8 +35,8 @@ export const headerSection = (options: HeaderOptions): Content => {
         alignment: 'center',
         margin: [0, 2, 0, 0],
         style: {
-          bold: true,
-          fontSize: 16,
+          // bold: true,
+          fontSize: 12,
         },
       }
     : [];
@@ -51,7 +51,7 @@ export const headerSection = (options: HeaderOptions): Content => {
               margin: [0, 15, 0, 0],
               style: {
                 bold: true,
-                fontSize: 22,
+                fontSize: 18,
               },
             },
             headerSubtitle,

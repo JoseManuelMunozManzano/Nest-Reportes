@@ -437,6 +437,12 @@ Modificamos `statistics.report.ts`.
 
 Modificamos `statistics.report.ts` para añadir la tabla.
 
+**Sección de encabezado**
+
+Modificamos `statistics.report.ts` para añadir el encabezado.
+
+Modificamos `header.section.ts` para que entre bien el texto de título y subtítulo.
+
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer las siguientes peticinoes GET: 
