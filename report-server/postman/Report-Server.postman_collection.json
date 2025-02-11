@@ -238,6 +238,29 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "11-Tamaño Personalizado",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/extra-reports/custom-size",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"extra-reports",
+						"custom-size"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

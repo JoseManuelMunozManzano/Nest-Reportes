@@ -558,6 +558,23 @@ En la carpeta `reports` creamos un nuevo archivo llamado `community.report.ts`.
 
 Para dar un diseño personalizado al borde de una tabla, en la carpeta `printer` modificamos el fuente `printer.service.ts` para crear otro `layout`.
 
+**Tamaños de página**
+
+Todos nuestros reportes han sido de tamaño carta. Aquí vemos como cambiar el tamaño de una página a A4...
+
+Se utiliza la propiedad `pageSize: 'A4',` y se indica dentro de comillas un valor predefinido, como en el ejemplo, o un tamaño personalizado: 
+
+```
+pageSize: {
+  width: 150,
+  height: 300,
+},
+```
+
+Creamos un nuevo `@Get` llamado `getCustomSize()` en `extra-reports.controller.ts`.
+
+En `extra-reports.service.ts` creamos el método `getCustomSize()`.
+
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer las siguientes peticiones GET: 
@@ -566,4 +583,6 @@ Tras ejecutar el proyecto, en Postman hacer las siguientes peticiones GET:
 http://localhost:3000/extra-reports/html-report
 
 http://localhost:3000/extra-reports/community-report
+
+http://localhost:3000/extra-reports/custom-size
 ```
