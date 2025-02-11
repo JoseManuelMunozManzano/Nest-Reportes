@@ -215,6 +215,29 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "10-Reporte Personalizado",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/extra-reports/community-report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"extra-reports",
+						"community-report"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

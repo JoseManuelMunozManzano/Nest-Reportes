@@ -548,10 +548,22 @@ export const getHtmlContent = (html:string="", replace: ContentReplacer={}) => {
 }
 ```
 
+**Personalización de tablas**
+
+Creamos un nuevo `@Get` llamado `getCommunityReport()` en `extra-reports.controller.ts`.
+
+En `extra-reports.service.ts` creamos el método `getCommunityReport()`.
+
+En la carpeta `reports` creamos un nuevo archivo llamado `community.report.ts`.
+
+Para dar un diseño personalizado al borde de una tabla, en la carpeta `printer` modificamos el fuente `printer.service.ts` para crear otro `layout`.
+
 **Testing**
 
 Tras ejecutar el proyecto, en Postman hacer las siguientes peticiones GET: 
 
 ```
 http://localhost:3000/extra-reports/html-report
+
+http://localhost:3000/extra-reports/community-report
 ```
